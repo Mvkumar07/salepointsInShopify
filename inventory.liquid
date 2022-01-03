@@ -1,0 +1,76 @@
+<ul class="sales-points">
+              <li class="sales-point">
+                <span class="icon-and-text">
+                  <span class="icon icon--inventory"></span>
+                  <span data-product-inventory="" data-threshold="8"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">In stock, ready to ship
+            </font></font></span>
+                </span>
+</li>
+</ul>
+<style>
+  .sales-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ .sales-point {
+    display: block;
+    margin-bottom: 10px;
+} 
+ .icon-and-text {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+  .sales-point .icon {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+  .icon-and-text .icon {
+    flex: 0 0 auto;
+}
+  .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
+  @keyframes inventory-pulse{
+  0%{
+    opacity:0.5;
+  }
+  to{
+    transform:scale(2.5);
+    opacity:0;
+  }
+}
+
+.icon--inventory:after,.icon--inventory:before{
+    width:9px;
+    height:9px;
+    background:#54c63a;
+    border-radius:9px;
+    position:absolute;
+    left:0;
+    top:0;
+    content:"";
+    margin:8px;
+  }
+
+.icon--inventory:before{
+    animation:inventory-pulse 2s linear infinite;
+  }
+
+.inventory--low .icon--inventory:after,.inventory--low .icon--inventory:before{
+      background:#f4af29;
+    }
+
+.inventory--low{
+  color:#f4af29;
+}
+
+</style>
